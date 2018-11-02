@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css">
+</head>
+<body>
+
+<% if session[:user_id] %>
+<nav class='navbar'>
+   
+    <ul>
+    <li><a href="/">Home</a></li>
+    <%# <% if !current_user== x.user.username%>
+    <li><a href="/new">New Blog</a></li>
+    <li>
+ <form method='post' action='/logout'>
+<input type='submit' value='logout'> 
+</form>
+</li>
+    </ul>
+</nav>
+
+
+
+    You are Logged in as: <%= current_user.username %>
+ 
+
+ <% end %>
+
+
+
+<div class='main-container'>
+<%= yield %>
+</div>
+
+
+</body>
+</html>
