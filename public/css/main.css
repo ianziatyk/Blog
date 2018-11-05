@@ -1,3 +1,237 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: small; }
 
+input {
+  display: inline-flex;
+  flex-direction: row;
+  border: 1px solid black;
+  background: rgba(200, 255, 234, 0.5);
+  color: black;
+  border-radius: 5px; }
+
+h6 {
+  color: black;
+  margin-top: 130px; }
+
+.nav ul {
+  list-style: none;
+  background-color: #444;
+  text-align: center;
+  padding: 0;
+  margin: 0; }
+
+.nav li {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2em;
+  line-height: 40px;
+  height: 40px;
+  border-bottom: 1px solid #888; }
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color; }
+
+.nav a:hover {
+  background-color: #005f5f; }
+
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default; }
+
+.main-container {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center; }
+
+#flash {
+  width: 100%; }
+
+.nav a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  transition: .3s background-color; }
+
+.nav a:hover {
+  background-color: #005f5f; }
+
+.nav a.active {
+  background-color: #fff;
+  color: #444;
+  cursor: default; }
+
+textarea {
+  color: gray;
+  background-color: white; }
+
+.headerText {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: xx-large; }
+
+.infoBox {
+  width: 80%;
+  float: left;
+  font-family: 'Lato', sans-serif;
+  font-size: smaller;
+  text-align: left; }
+
+.blogText {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: medium;
+  text-align: justify;
+  width: 475px;
+  margin-left: 10px;
+  margin-right: auto;
+  font-family: 'Old Standard TT', serif; }
+
+.blogTitle a {
+  font-size: 3.4em;
+  padding: 10px 10px;
+  text-align: left;
+  font-family: 'Pattaya', sans-serif;
+  color: black;
+  text-decoration: none;
+  float: left; }
+
+.displayWrap {
+  width: 60%;
+  display: grid;
+  grid-template-columns: auto;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  margin-bottom: 100px; }
+
+div .blogTitle {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  float: right; }
+
+hr {
+  opacity: .2; }
+
+#logoText a {
+  font-size: xx-large; }
+
+.tryThis img {
+  width: 100%;
+  margin-top: 15px;
+  margin-bottom: 15px; }
+
+.loginBox {
+  width: 75%;
+  height: 400px;
+  display: grid;
+  grid-template-columns: 1fr .1fr 1fr;
+  margin-left: auto;
+  margin-right: auto; }
+
+.createUser {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column; }
+
+.centerSplit {
+  height: 100%;
+  width: 1px;
+  background-color: #444; }
+
+#pBox {
+  position: relative;
+  visibility: visible;
+  border: transparent;
+  width: 15px;
+  background-color: white;
+  right: 5px;
+  top: 150px; }
+
+.sideGrid {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 240px;
+  height: 250px; }
+
+p {
+  visibility: hidden; }
+
+#one {
+  width: 50px;
+  height: 50px;
+  background-color: #3b5998;
+  border-radius: 0px 20px 0px 0px;
+  background-image: url(./images/fbB.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.3s; }
+
+#one:hover {
+  width: 150px;
+  transition: 0.3s;
+  border-radius: 0px 10px 10px 0px; }
+
+#two {
+  background-color: #1da1f2;
+  width: 50px;
+  height: 50px;
+  background-image: url(./images/twitter.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: 0.3s; }
+
+#two:hover {
+  width: 150px;
+  transition: 0.3s;
+  border-radius: 0px 10px 10px 0px; }
+
+#three {
+  background-color: #faa472;
+  width: 50px;
+  height: 50px;
+  transition: 0.3s;
+  background-image: url(./images/instaG.png);
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+#three:hover {
+  width: 150px;
+  border-radius: 0px 10px 10px 0px; }
+
+#four {
+  background-color: #49ce68;
+  width: 50px;
+  height: 50px;
+  transition: 0.3s;
+  background-image: url(./images/shareG.png);
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+#four:hover {
+  width: 150px;
+  border-radius: 0px 10px 10px 0px; }
+
+#five {
+  background-color: grey;
+  width: 50px;
+  height: 50px;
+  transition: 0.3s;
+  border-radius: 0px 0px 20px 0px;
+  background-image: url(./images/mail-iconG.png);
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+#five:hover {
+  width: 150px;
+  border-radius: 0px 10px 10px 0px; }
 
 /*# sourceMappingURL=main.css.map */

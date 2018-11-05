@@ -1,40 +1,58 @@
+<%if !session[:user_id]%>
 
-<div class='signinform'>
-<div class='signup'>
-<h6> create</h6>
-<form method='post' action='/signup'>
-<input type='text' name ='username' > 
-<input type='text'name ='password' > 
+<div class='loginBox'>
+
+<div class='logIn'>
+<h6>Login</h6>
+
+
+<form class='createUser' method='post' action='/login'>
+<input type='text' name ='username' placeholder='user name' > 
+<input type='text'name ='password' placeholder='password' > 
+<input type='submit'> 
+</form>
+</div>
+
+<div class='centerSplit'>
+<p id='pBox'>or</p>
+</div>
+
+<div>
+<h6>Create User</h6>
+<form class='createUser' method='post' action='/signup'>
+<input type='text' name ='username' placeholder='user name' > 
+<input type='text'name ='password' placeholder='password' > 
 <input type='submit'> 
 
 </form>
-
-
-</div>
 </div>
 
 
-<div class='logIn'>
-<h6> already user</h6>
-
-
-<form method='post' action='/login'>
-<input type='text' name ='username' > 
-<input type='text'name ='password' > 
-<input type='submit'> 
-
 </div>
-
-</div>
-
+<%end%>
 
 <% if session[:user_id] %>
 
-<h3>All blogs</h3>
+<h3 class='headerText'>Most Recent Entries</h3>
 
-<% @blogs.all.reverse[0..@blogs.length].each do |x|%>
-<div><a href="/blogs/<%=x.id%>"><%=x.title%> by: <%=x.user.username%></a></div>
-<div><%=x.content%></div>
+
+
+<% @blogs.all.reverse[0..5].each do |x|%>
+<div class='displayWrap'>
+
+<div class='blogTitle'><a href="/blogs/<%=x.id%>" style="text-decoration:none";><%=x.title%></a></div>
+
+<div class='infoBox'>
+<hr>
+<%=x.user.username%>
+<hr>
+Date
+<hr>
+
+</div>
+<div class='blogText'><%=x.content%></div>
+</div>
+<hr>
 
 <% end %>
 

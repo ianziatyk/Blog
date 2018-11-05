@@ -1,0 +1,83 @@
+.sideGrid{display: flex;
+    flex-direction: column;
+    position: fixed;
+    top:240px;
+    height: 250px;
+
+}
+p {
+    visibility: hidden;
+}
+#one{width: 50px;
+    height: 50px;
+    background-color:rgb(59, 89, 152);
+    border-radius: 0px 20px 0px 0px;
+    background-image: url(./images/fbB.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+#one:hover{
+    width: 150px;
+    transition: 0.3s;
+    border-radius: $main-border-ease;
+}
+#two{
+    background-color:rgb(29, 161, 242);
+    width: 50px;
+    height: 50px;
+    background-image: url(./images/twitter.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    transition: 0.3s;
+}
+#two:hover{
+    width: 150px;
+    transition: 0.3s;
+    border-radius: $main-border-ease;
+}
+#three{
+    background-color: rgb(250, 164, 114);
+    width: 50px;
+    height: 50px;
+    transition: 0.3s;
+    background-image:url(./images/instaG.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+}
+
+#three:hover{
+width: 150px;
+border-radius: $main-border-ease;
+
+}
+
+#four{
+    background-color:rgb(73, 206, 104);
+    width: 50px;
+    height: 50px;
+    transition: 0.3s;
+    background-image: url(./images/shareG.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#four:hover{
+    width: 150px;
+    border-radius: $main-border-ease;
+}
+
+#five{
+    background-color:grey;
+    width: 50px;
+    height: 50px;
+    transition: 0.3s;
+    border-radius: 0px 0px 20px 0px;
+    background-image: url(./images/mail-iconG.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#five:hover{
+    width: 150px;
+    border-radius: $main-border-ease;
+}

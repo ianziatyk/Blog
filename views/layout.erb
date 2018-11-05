@@ -2,17 +2,28 @@
 <html>
 <head>
 	<title></title>
-    <link rel="stylesheet" type="text/css" href="../css/main.css">
+    <base href="/">
+    <link rel="stylesheet" type="text/css" href="../css/main.css"  >
+    <link href="https://fonts.googleapis.com/css?family=Lato|Old+Standard+TT|Pattaya|Playfair+Display" ref="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    
 </head>
 <body>
-
+<nav class='nav'>
+<ul>
+<li id='logoText'><a href="/"><strong>BLOG</strong>Duck</a></li>
+</ul>
+</nav>
 <% if session[:user_id] %>
-<nav class='navbar'>
-   
+
+<nav class='nav'>
+
     <ul>
-    <li><a href="/">Home</a></li>
+    <li><a href="/">All Blogs</a></li>
+   
     <%# <% if !current_user== x.user.username%>
     <li><a href="/new">New Blog</a></li>
+    <li><a href="/all_users">All Users</a></li>
+    <li><a href='/users/<%=current_user.id%>'> Welcome back: <%= current_user.username %></a></a></li>
     <li>
  <form method='post' action='/logout'>
 <input type='submit' value='logout'> 
@@ -21,12 +32,14 @@
     </ul>
 </nav>
 
-
-
-    You are Logged in as: <%= current_user.username %>
- 
-
  <% end %>
+
+ <% flash.keys.each do |type| %>
+  <div data-alert id="flash" type="alert-box radius">
+    <%= flash[type] %>
+    <a  class="close"></a>
+  </div>
+<% end %>
 
 
 
@@ -34,6 +47,14 @@
 <%= yield %>
 </div>
 
+
+<div class='sideGrid'>
+		<a href="https://facebook.com/redbridgeproductions/"><div id='one'></div>
+		<div id='two'></div></a>
+		<a href='https://www.instagram.com/mr.blahblahblah/'><div id='three'></div></a>
+		<div id='four'></div>
+		<a href="mailto:ian.ziatyk@gmail.com?subject=Great%20Blog!&body=Hello,%20I%20read%20your%20blog%20and%20it%20was%20amazing"><div id='five'></div></a>
+	</div>
 
 </body>
 </html>

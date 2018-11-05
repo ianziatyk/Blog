@@ -1,4 +1,4 @@
-<h3>Individual Blog</h3>
+<h3 class='headerText'>Individual Blog</h3>
 
 
 <div><%= @blog.title%></div>
@@ -9,16 +9,10 @@
 <a href="/blogs/<%= @blog.id%>/edit"><input type='submit' value='update'></a>
 
 <br>
-<hr>
 
 <form method='post' action="/destroy/<%=@blog.id %>">
     <input type='submit' value='delete Blog'>
     </form>
-
-
-
-
-
 
 
 

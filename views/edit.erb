@@ -1,10 +1,10 @@
-<h3> update a Blog</h3>
+<h3 class='nav'> update a Blog</h3>
 
 <form method="post" action="/update/<%= @blog.id%>">
 <p>title</p>
-<input type="text" name ="title"> 
+<textarea type="text" name ="title" rows='1' cols="40"><%=@blog.title%> </textarea>
 <p>content</p>
-<textarea type="text" name ="content"></textarea>
+<textarea type="text" name ="content" rows='20' cols="80"><%=@blog.content%></textarea>
 <input type="submit">
 </form>
 
