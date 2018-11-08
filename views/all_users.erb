@@ -3,15 +3,16 @@
 
 <h3 class='headerText'>All Users</h3>
 
-<div class='displayWrap'>
-<% @user.each do |x|%>
-
-<div class='blogTitle'><a href="/users/<%=x.id%>" style="text-decoration:none";><%=x.username%></a></div>
-<%# 
-<div class='blogText'><%=x.content</div> %> 
-
-<%end%>
+<div class='allUserWrap'>
+        <% @user.each_with_index do |x,index|%>
+        <div id='allWrap'>
+            <div><a href="/users/<%=x.id%>" style="text-decoration:none";><%= index + 1 %> - <%=x.username%></a></div>
+        </div>
+        <%end%>
+</div>
 </div>
 
 
 
+<%# 
+<div class='blogText'><%=x.content</div> %> 

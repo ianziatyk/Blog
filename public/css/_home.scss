@@ -1,7 +1,12 @@
 .main-container{
     margin-left: auto;
     margin-right: auto;
-    text-align: center;
+    min-width: 750px;
+}
+@font-face {
+  font-family: "bembo";
+  src: url("./fonts/BemboStd.otf");
+  font-weight:400;
 }
 
 #flash{width: 100%;
@@ -23,22 +28,6 @@
 // border-bottom: 1px solid #888;
 }
  
-.nav a {
-  text-decoration: none;
-  color: #fff;
-  display: block;
-  transition: .3s background-color;
-}
- 
-.nav a:hover {
-  background-color: #005f5f;
-}
- 
-.nav a.active {
-  background-color: #fff;
-  color: #444;
-  cursor: default;
-}
 
 
 textarea{
@@ -49,10 +38,15 @@ textarea{
 .headerText{
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: xx-large;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+text-align: center;
 
 }
 
 .infoBox{
+  padding-top:10px;
   width: 80%;
   float: left;
   font-family: 'Lato', sans-serif;
@@ -63,13 +57,13 @@ textarea{
 
 
 .blogText{
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  font-size: medium;
+  padding-top:10px;
+  font-size: large;
   text-align: justify;
   width: 475px;
   margin-left: 10px;
   margin-right: auto;
-  font-family: 'Old Standard TT', serif;
+  font-family: 'bembo';
   
 }
 
@@ -84,6 +78,7 @@ float: left;
  }
 
  .displayWrap{
+   padding-top: 10px;
    width: 60%;
   display: grid;
   grid-template-columns:auto;
@@ -105,21 +100,30 @@ float: left;
 
  #logoText a{
    font-size:xx-large;
-
+   padding: 0 auto;
+   margin:0 auto;
+   text-align: left;
+   padding-top:10px;
+   font-family: 'Arvo', serif;
  }
+ 
+
  .tryThis img{
    width: 100%;
    margin-top: 15px;
    margin-bottom: 15px;
  }
 
+#logoId{justify-content: left;
+
+}
  .loginBox{
-   width: 75%;
    height: 400px;
    display: grid;
-   grid-template-columns: 1fr .1fr 1fr;
+   grid-template-columns: 1fr .01fr 1fr;
    margin-left: auto;
    margin-right: auto;
+   text-align: center; 
  }
 
  .createUser {
@@ -127,15 +131,18 @@ float: left;
    margin-left: auto;
    margin-right: auto;
    margin-top:50px;
+   padding: 10px 10px;
 
   display: flex;
   flex-direction: column;
  }
 
  .centerSplit{
-   height: 100%;
+   height: 90%;
    width: 1px;
    background-color: #444;
+   opacity: .5;
+   margin-top: 105px;
  }
 
  #pBox{position: relative;
@@ -146,3 +153,56 @@ float: left;
   right: 5px;
   top: 150px;
  }
+
+ .allUserWrap a{
+   font-family: 'Lato', sans-serif;
+   font-size: large;
+   color: black;
+   width: 100%;
+   
+ }
+ .allUserWrap{
+   width: 40%;
+   margin-left: auto;
+   margin-right: auto;
+ }
+
+
+ // this is for the welcome box
+
+ #welcomeBox{
+   margin-top:2%;
+   width: 40%;
+   text-align: center;
+   margin-left: auto;
+   margin-right:auto;
+ }
+
+ #hello{
+   font-size: 40px;
+ }
+ 
+ 
+ #forSignOut{
+  border-bottom: none;
+  background-color: transparent;
+  width:100px;
+  text-align: center;
+  color: red;
+  font-weight: bold;
+ }
+
+ #allWrap{
+   width: 300px;
+   margin-right: auto;
+   margin-left: auto;
+   justify-content: left;
+   border-bottom: 1px solid black;
+ }
+
+ .deleteEdit{
+   position: fixed;
+   bottom: 10px;
+ }
+
+ 

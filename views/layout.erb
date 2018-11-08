@@ -4,35 +4,43 @@
 	<title></title>
     <base href="/">
     <link rel="stylesheet" type="text/css" href="../css/main.css"  >
-    <link href="https://fonts.googleapis.com/css?family=Lato|Old+Standard+TT|Pattaya|Playfair+Display" ref="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Old+Standard+TT|Pattaya|Playfair+Display|Playfair+Display|Arvo" rel="stylesheet">
     
 </head>
 <body>
 <nav class='nav'>
 <ul>
-<li id='logoText'><a href="/"><strong>BLOG</strong>Duck</a></li>
+<li id='head'></li>
+<li id='logoText'><a id='logoId' href="/"><strong>Over</strong><br>Thinker</a></li>
+  <% if session[:user_id] %>
+  
+  
+  <div class='rightMenu'>
+  <div id='allUserText'>
+   <a href="/all_users">All Users</a>
+   </div>
+  
+    <div class='dropdown'>
+    <div class="dropbtn"><a><%= current_user.username %></a></li></div>
+    <div class="dropdown-content">
+
+
+<a href="/new">New Blog</a>
+<a  href='/users/<%=current_user.id%>'>Your Blogs</a>
+<a>
+ <form  method='post' action='/logout'>
+<input id='forSignOut'  type='submit' value='Sign out'> 
+</form>
+</a>
+</div>
+</div>
+</div>
+<% end %>
 </ul>
 </nav>
-<% if session[:user_id] %>
 
-<nav class='nav'>
 
-    <ul>
-    <li><a href="/">All Blogs</a></li>
-   
-    <%# <% if !current_user== x.user.username%>
-    <li><a href="/new">New Blog</a></li>
-    <li><a href="/all_users">All Users</a></li>
-    <li><a href='/users/<%=current_user.id%>'> Welcome back: <%= current_user.username %></a></a></li>
-    <li>
- <form method='post' action='/logout'>
-<input type='submit' value='logout'> 
-</form>
-</li>
-    </ul>
-</nav>
-
- <% end %>
+ 
 
  <% flash.keys.each do |type| %>
   <div data-alert id="flash" type="alert-box radius">

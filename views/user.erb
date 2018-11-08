@@ -1,33 +1,42 @@
 
 <% if session[:user_id] == @user.id%>
-<h2>Welcome <%= @user.username %></h2>
+<h2 class='headerText'> <%= @user.username %>'s Blogs</h2>
+<div class='deleteEdit'> 
 <form method='post' action='/destroy/user/<%=@user.id %>'>
+<input type="text"  value='enterpassworddeleteaccount' name="delete_password" />
 <input type='submit' value='Delete User'> 
 </form>
+</div>
+
+<div class="allUserWrap">
+
+<% @user.blogs.each_with_index do |x,index| %>
+<div class='allWrap'>
+<div><a href="/blogs/<%=x.id%>" style="text-decoration:none";><%=index+1%>-<%=x.title%></a></div>
+</div>
+<% end%>
+
+<%end%>
+</div>
+
+
+<% if session[:user_id] != @user.id%>
+<h2 class='headerText'> <%= @user.username %>'s Blogs</h2>
 <% @user.blogs.each do |x| %>
 <div class='displayWrap'>
 <div class='blogTitle'><a href="/blogs/<%=x.id%>" style="text-decoration:none";><%=x.title%></a></div>
 
 <div class='infoBox'>
+ <hr>
+            <%=@user.username%>
+            <hr>
+            Date
+            <hr>
+
 </div>
-</div>
-<% end%>
-<%end%>
-
-
-<% if session[:user_id] != @user.id%>
-<h2> <%= @user.username %>'s Blogs</h2>
-<% @user.blogs.each do |x| %>
-<div class='displayWrap'>
-<div class='blogTitle'><a href="/blogs/<%=x.id%>" style="text-decoration:none";><%=x.title%>-<%=x.user.username%></a></div>
-
-<div class='infoBox'>
 <div class='blogText'><%=x.content%></div>
 </div>
-</div>
 <% end%>
 
 <%end%>
-
-
 

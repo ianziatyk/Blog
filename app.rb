@@ -21,17 +21,21 @@ def current_user
     end
 end
 
+def kik_out
+    session[:user_id] = nil
+end
+
 
 
 get "/" do
     @blogs = Blog.all
    
     if session[:user_id]
-        flash[:notice] = 'Welcome'
+
     end
     
     if !session[:user_id]
-        flash[:notice] = "Welcome to BlogDuck! Please log-in or Create a new Login "
+        flash[:notice] =nil
         
     end
 
@@ -60,7 +64,7 @@ post "/create_blog" do
 end
 
 get "/blogs/:id" do
-    
+    current_user
     @blog = Blog.find(params[:id])
 
     erb :show
@@ -122,7 +126,7 @@ post "/update/:id" do
 
             user = User.new(username: username , password: password)
             if user.save
-                
+                session[:user_id] = user.id
                 redirect "/"
             else
                 erb :index
@@ -192,13 +196,20 @@ post "/destroy/user/:id" do
     if !session[:user_id]
         redirect"/"
     end
-    
- session[:user_id] =nil
- @user = User.find(params[:id])
- @user.blogs.each do |x|
-  x.destroy
+
+     if params[:delete_password] == current_user.password
+    session[:user_id] =nil
+    @user = User.find(params[:id])
+    @user.blogs.each do |x|
+    x.destroy
  end
+else
+    flash[:notice] = "please input a correct PW!"
+    redirect "/"
+   
+end
  
  @user.destroy
+ flash[:notice] = "you have deleted your user page!"
  redirect "/"
 end

@@ -1,5 +1,10 @@
 <%if !session[:user_id]%>
 
+<div id='welcomeBox'>
+<div id='hello'>Hello</div>
+<div id='underHello'>BlogDuck, for the friendly folk.</div>
+</div>
+
 <div class='loginBox'>
 
 <div class='logIn'>
@@ -9,7 +14,7 @@
 <form class='createUser' method='post' action='/login'>
 <input type='text' name ='username' placeholder='user name' > 
 <input type='text'name ='password' placeholder='password' > 
-<input type='submit'> 
+<input id='loginSubmit' type='submit' value='Login'> 
 </form>
 </div>
 
@@ -22,7 +27,7 @@
 <form class='createUser' method='post' action='/signup'>
 <input type='text' name ='username' placeholder='user name' > 
 <input type='text'name ='password' placeholder='password' > 
-<input type='submit'> 
+<input id='createSubmit' type='submit' value='Create'> 
 
 </form>
 </div>
@@ -33,7 +38,7 @@
 
 <% if session[:user_id] %>
 
-<h3 class='headerText'>Most Recent Entries</h3>
+<h3 class='headerText'></h3>
 
 
 
@@ -44,15 +49,17 @@
 
 <div class='infoBox'>
 <hr>
-<%=x.user.username%>
+<a href="users/<%= x.user_id%>"><%=x.user.username%></a>
 <hr>
 Date
 <hr>
 
 </div>
 <div class='blogText'><%=x.content%></div>
+
 </div>
 <hr>
+
 
 <% end %>
 
