@@ -99,6 +99,20 @@ post "/update/:id" do
         end
     end
 
+    post "/update/user/:id" do
+    current_user
+    @user = User.find(params[:id])
+    if !session[:user_id]
+        redirect"/"
+    end
+    if @user.update(fname:params[:fname], lname: params[:lname], email: params[:email])
+        redirect "/"
+    else
+        erb "/user/@user.id"
+    end
+end
+
+
 
     post "/destroy/:id" do
         @blog = Blog.find(params[:id])
@@ -123,8 +137,12 @@ post "/update/:id" do
         post '/signup' do
             username = params[:username]
             password = params[:password]
+            fname = params[:fname]
+            lname= params[:lname]
+            email = params[:email]
 
-            user = User.new(username: username , password: password)
+
+            user = User.new(username: username , password: password, fname: fname, lname: lname, email: email)
             if user.save
                 session[:user_id] = user.id
                 redirect "/"
@@ -133,8 +151,11 @@ post "/update/:id" do
         end
     end
 
-    get "/hello" do
-        erb :hello
+    get "/admin/:id" do
+        current_user
+        @user = User.find(params[:id])
+        
+        erb :admin
     end
 
 
@@ -174,7 +195,6 @@ get "/users/:id" do
      if !session[:user_id]
         redirect"/"
     end
-    
     erb :user
 
 end
@@ -197,7 +217,7 @@ post "/destroy/user/:id" do
         redirect"/"
     end
 
-     if params[:delete_password] == current_user.password
+     if params[:delete_password] && params[:delete_password_confirm] == current_user.password
     session[:user_id] =nil
     @user = User.find(params[:id])
     @user.blogs.each do |x|

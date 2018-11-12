@@ -13,6 +13,9 @@ input {
   border-bottom: 1px solid grey;
   padding: 15px; }
 
+input:hover {
+  font-weight: bold; }
+
 #loginSubmit {
   background-color: #4a4ada;
   color: white; }
@@ -109,6 +112,38 @@ div#userInMenu {
   width: 40%;
   margin-left: auto;
   margin-right: auto; }
+
+#newButton {
+  border: transparent;
+  border-radius: 50% 50%;
+  height: 50px;
+  width: 50px;
+  margin-top: 50px;
+  background: #58b658; }
+
+#plus {
+  font-size: xx-large;
+  padding-top: 6px; }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black; }
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1; }
+
+.tooltip:hover .tooltiptext {
+  visibility: visible; }
 
 .main-container {
   margin-left: auto;
@@ -266,6 +301,9 @@ hr {
 .deleteEdit {
   position: fixed;
   bottom: 10px; }
+
+submit:hover {
+  font-weight: bold; }
 
 .sideGrid {
   display: flex;

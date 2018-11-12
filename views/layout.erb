@@ -27,16 +27,20 @@
 
 <a href="/new">New Blog</a>
 <a  href='/users/<%=current_user.id%>'>Your Blogs</a>
-<a>
+<a href='/admin/<%=current_user.id%>'>Settings</a>
  <form  method='post' action='/logout'>
 <input id='forSignOut'  type='submit' value='Sign out'> 
 </form>
 </a>
 </div>
 </div>
+
 </div>
+<a id='newButton' href='/new'><div class='tooltip' id='plus'>+<span class="tooltiptext">New Blog</span></div></a>
 <% end %>
 </ul>
+
+
 </nav>
 
 
